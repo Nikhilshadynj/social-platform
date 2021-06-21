@@ -1,0 +1,228 @@
+[2021-06-16T10:02:37.302] [ERROR] error_logs - ERROR
+[2021-06-16T11:07:48.432] [ERROR] error_logs - ERROR
+[2021-06-16T11:11:07.874] [ERROR] error_logs - ERROR
+[2021-06-16T11:12:07.118] [ERROR] error_logs - ERROR
+[2021-06-16T11:14:19.329] [ERROR] error_logs - ERROR
+[2021-06-16T11:15:22.742] [ERROR] error_logs - ERROR
+[2021-06-16T11:15:50.218] [ERROR] error_logs - ERROR
+[2021-06-16T11:18:01.594] [ERROR] error_logs - ERROR
+[2021-06-16T11:18:30.627] [ERROR] error_logs - ERROR
+[2021-06-16T11:18:50.326] [ERROR] error_logs - ERROR
+[2021-06-16T11:20:07.199] [ERROR] error_logs - ERROR
+[2021-06-16T11:21:22.721] [ERROR] error_logs - ERROR
+[2021-06-16T11:27:24.520] [ERROR] error_logs - ERROR
+[2021-06-16T11:28:20.305] [ERROR] error_logs - ERROR
+[2021-06-16T11:36:10.018] [ERROR] error_logs - userController.js-addLike-CastError: Cast to ObjectId failed for value "60a5ed933ad2571922" at path "_id" for model "User"
+[2021-06-16T11:43:31.398] [ERROR] error_logs - ERROR
+[2021-06-16T11:44:48.155] [ERROR] error_logs - ERROR
+[2021-06-16T11:45:20.582] [ERROR] error_logs - ERROR
+[2021-06-16T11:48:45.644] [ERROR] error_logs - ERROR
+[2021-06-16T11:48:49.503] [ERROR] error_logs - ERROR
+[2021-06-16T11:55:32.594] [ERROR] error_logs - ERROR
+[2021-06-16T11:56:16.703] [ERROR] error_logs - ERROR
+[2021-06-16T11:56:28.755] [ERROR] error_logs - ERROR
+[2021-06-16T12:00:19.046] [ERROR] error_logs - ERROR
+[2021-06-16T12:00:27.390] [ERROR] error_logs - ERROR
+[2021-06-16T12:00:38.865] [ERROR] error_logs - ERROR
+[2021-06-16T12:00:58.135] [ERROR] error_logs - ERROR
+[2021-06-16T12:01:07.441] [ERROR] error_logs - ERROR
+[2021-06-16T12:10:00.129] [ERROR] error_logs - ERROR
+[2021-06-16T12:16:03.509] [ERROR] error_logs - ERROR
+[2021-06-16T12:16:08.110] [ERROR] error_logs - userController.js-homepage-MongoError: the count field cannot be a $-prefixed path
+[2021-06-16T12:16:21.735] [ERROR] error_logs - ERROR
+[2021-06-16T12:16:22.659] [ERROR] error_logs - userController.js-homepage-MongoError: path option to $unwind stage should be prefixed with a '$': likes
+[2021-06-16T12:16:33.358] [ERROR] error_logs - ERROR
+[2021-06-16T12:16:35.530] [ERROR] error_logs - ERROR
+[2021-06-16T12:18:25.072] [ERROR] error_logs - ERROR
+[2021-06-16T12:21:52.662] [ERROR] error_logs - ERROR
+[2021-06-16T12:21:57.631] [ERROR] error_logs - userController.js-homepage-MongoError: the count field must be a non-empty string
+[2021-06-16T12:22:15.169] [ERROR] error_logs - ERROR
+[2021-06-16T12:23:19.775] [ERROR] error_logs - ERROR
+[2021-06-16T12:23:20.985] [ERROR] error_logs - userController.js-homepage-MongoError: the count field cannot be a $-prefixed path
+[2021-06-16T12:24:05.608] [ERROR] error_logs - ERROR
+[2021-06-16T12:24:44.669] [ERROR] error_logs - ERROR
+[2021-06-16T12:28:49.269] [ERROR] error_logs - ERROR
+[2021-06-16T12:29:32.696] [ERROR] error_logs - ERROR
+[2021-06-16T12:29:34.084] [ERROR] error_logs - userController.js-homepage-ReferenceError: $postLat is not defined
+[2021-06-16T12:29:45.010] [ERROR] error_logs - ERROR
+[2021-06-16T12:30:25.567] [ERROR] error_logs - ERROR
+[2021-06-16T12:31:06.210] [ERROR] error_logs - ERROR
+[2021-06-16T12:31:54.863] [ERROR] error_logs - ERROR
+[2021-06-16T12:33:15.178] [ERROR] error_logs - ERROR
+[2021-06-16T12:33:30.282] [ERROR] error_logs - ERROR
+[2021-06-16T12:36:17.408] [ERROR] error_logs - ERROR
+[2021-06-16T12:36:25.542] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T12:36:36.987] [ERROR] error_logs - ERROR
+[2021-06-16T12:36:38.117] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T12:37:31.796] [ERROR] error_logs - ERROR
+[2021-06-16T12:37:33.739] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T12:38:25.977] [ERROR] error_logs - ERROR
+[2021-06-16T12:38:28.728] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T12:38:56.660] [ERROR] error_logs - ERROR
+[2021-06-16T12:38:58.685] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T12:39:13.357] [ERROR] error_logs - ERROR
+[2021-06-16T12:40:51.381] [ERROR] error_logs - ERROR
+[2021-06-16T12:41:19.832] [ERROR] error_logs - ERROR
+[2021-06-16T12:42:14.042] [ERROR] error_logs - ERROR
+[2021-06-16T12:43:08.457] [ERROR] error_logs - ERROR
+[2021-06-16T12:43:26.361] [ERROR] error_logs - ERROR
+[2021-06-16T12:43:46.419] [ERROR] error_logs - ERROR
+[2021-06-16T12:44:30.828] [ERROR] error_logs - ERROR
+[2021-06-16T12:44:35.260] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: Unrecognized expression '$comments.replyOf'
+[2021-06-16T12:44:57.095] [ERROR] error_logs - ERROR
+[2021-06-16T12:53:30.437] [ERROR] error_logs - ERROR
+[2021-06-16T12:53:32.539] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: Unrecognized expression '$comments.replyOf'
+[2021-06-16T12:54:31.465] [ERROR] error_logs - ERROR
+[2021-06-16T12:54:32.673] [ERROR] error_logs - ERROR
+[2021-06-16T12:56:56.294] [ERROR] error_logs - ERROR
+[2021-06-16T12:57:42.632] [ERROR] error_logs - ERROR
+[2021-06-16T12:58:17.611] [ERROR] error_logs - ERROR
+[2021-06-16T12:58:19.070] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T12:58:43.246] [ERROR] error_logs - ERROR
+[2021-06-16T12:58:48.500] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T12:58:56.811] [ERROR] error_logs - ERROR
+[2021-06-16T12:58:57.798] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:03:08.498] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:03:15.839] [ERROR] error_logs - ERROR
+[2021-06-16T13:03:20.532] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:03:30.304] [ERROR] error_logs - ERROR
+[2021-06-16T13:03:35.699] [ERROR] error_logs - ERROR
+[2021-06-16T13:03:36.761] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:03:37.524] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:03:53.803] [ERROR] error_logs - ERROR
+[2021-06-16T13:03:54.564] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-16T13:04:02.472] [ERROR] error_logs - ERROR
+[2021-06-16T13:14:41.239] [ERROR] error_logs - ERROR
+[2021-06-16T13:14:44.085] [ERROR] error_logs - userController.js-homepage-MongoError: $lookup with 'pipeline' may not specify 'localField' or 'foreignField'
+[2021-06-16T13:15:05.238] [ERROR] error_logs - ERROR
+[2021-06-16T13:15:06.087] [ERROR] error_logs - userController.js-homepage-MongoError: unknown top level operator: $replyOf
+[2021-06-16T13:15:13.600] [ERROR] error_logs - ERROR
+[2021-06-16T13:16:51.767] [ERROR] error_logs - ERROR
+[2021-06-16T13:17:54.964] [ERROR] error_logs - ERROR
+[2021-06-16T13:27:12.592] [ERROR] error_logs - ERROR
+[2021-06-16T13:28:18.573] [ERROR] error_logs - ERROR
+[2021-06-16T13:28:42.047] [ERROR] error_logs - ERROR
+[2021-06-16T13:36:35.781] [ERROR] error_logs - ERROR
+[2021-06-16T13:37:12.170] [ERROR] error_logs - ERROR
+[2021-06-16T13:37:32.690] [ERROR] error_logs - ERROR
+[2021-06-16T13:37:34.083] [ERROR] error_logs - userController.js-homepage-MongoError: unknown top level operator: $comments.replyOf
+[2021-06-16T13:37:41.104] [ERROR] error_logs - ERROR
+[2021-06-16T13:41:59.254] [ERROR] error_logs - ERROR
+[2021-06-16T13:42:03.524] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: Unrecognized expression '$comments.replyOf'
+[2021-06-16T13:42:15.036] [ERROR] error_logs - ERROR
+[2021-06-16T13:42:15.998] [ERROR] error_logs - userController.js-homepage-MongoError: Invalid $project :: caused by :: FieldPath field names may not contain '.'.
+[2021-06-16T13:42:38.624] [ERROR] error_logs - ERROR
+[2021-06-16T13:49:45.924] [ERROR] error_logs - ERROR
+[2021-06-16T13:49:56.432] [ERROR] error_logs - ERROR
+[2021-06-16T13:50:36.951] [ERROR] error_logs - ERROR
+[2021-06-16T13:53:36.851] [ERROR] error_logs - ERROR
+[2021-06-16T13:54:31.569] [ERROR] error_logs - ERROR
+[2021-06-16T13:55:27.760] [ERROR] error_logs - ERROR
+[2021-06-16T13:57:12.661] [ERROR] error_logs - ERROR
+[2021-06-16T13:57:40.102] [ERROR] error_logs - ERROR
+[2021-06-16T13:59:23.087] [ERROR] error_logs - ERROR
+[2021-06-16T13:59:25.693] [ERROR] error_logs - userController.js-homepage-MongoError: unknown top level operator: $postId
+[2021-06-16T13:59:33.594] [ERROR] error_logs - ERROR
+[2021-06-16T13:59:53.344] [ERROR] error_logs - ERROR
+[2021-06-16T14:06:35.301] [ERROR] error_logs - ERROR
+[2021-06-16T14:07:09.934] [ERROR] error_logs - ERROR
+[2021-06-16T14:07:20.904] [ERROR] error_logs - ERROR
+[2021-06-16T14:08:16.095] [ERROR] error_logs - ERROR
+[2021-06-16T14:08:22.643] [ERROR] error_logs - ERROR
+[2021-06-16T14:09:42.582] [ERROR] error_logs - ERROR
+[2021-06-16T14:10:38.741] [ERROR] error_logs - ERROR
+[2021-06-16T14:10:55.244] [ERROR] error_logs - ERROR
+[2021-06-16T14:12:14.501] [ERROR] error_logs - ERROR
+[2021-06-16T14:13:32.580] [ERROR] error_logs - ERROR
+[2021-06-16T14:13:34.777] [ERROR] error_logs - ERROR
+[2021-06-16T14:13:36.945] [ERROR] error_logs - userController.js-homepage-MongoError: unknown top level operator: $postId
+[2021-06-16T14:13:49.186] [ERROR] error_logs - ERROR
+[2021-06-16T14:15:08.952] [ERROR] error_logs - ERROR
+[2021-06-16T14:17:29.604] [ERROR] error_logs - ERROR
+[2021-06-16T14:18:42.266] [ERROR] error_logs - ERROR
+[2021-06-16T14:20:00.903] [ERROR] error_logs - ERROR
+[2021-06-16T14:20:42.377] [ERROR] error_logs - ERROR
+[2021-06-16T14:20:58.297] [ERROR] error_logs - ERROR
+[2021-06-16T14:21:10.372] [ERROR] error_logs - ERROR
+[2021-06-16T14:22:22.142] [ERROR] error_logs - ERROR
+[2021-06-16T14:23:50.551] [ERROR] error_logs - ERROR
+[2021-06-16T14:25:56.519] [ERROR] error_logs - ERROR
+[2021-06-16T14:26:44.382] [ERROR] error_logs - ERROR
+[2021-06-16T14:27:17.378] [ERROR] error_logs - ERROR
+[2021-06-16T14:27:22.576] [ERROR] error_logs - userController.js-homepage-Error: Arguments must be aggregate pipeline operators
+[2021-06-16T14:27:33.894] [ERROR] error_logs - ERROR
+[2021-06-16T14:29:17.202] [ERROR] error_logs - ERROR
+[2021-06-16T14:33:10.541] [ERROR] error_logs - ERROR
+[2021-06-16T14:33:51.812] [ERROR] error_logs - ERROR
+[2021-06-16T14:34:30.288] [ERROR] error_logs - ERROR
+[2021-06-16T14:34:36.040] [ERROR] error_logs - userController.js-homepage-MongoError: Use of undefined variable: article_id
+[2021-06-16T14:35:35.858] [ERROR] error_logs - ERROR
+[2021-06-16T14:35:39.255] [ERROR] error_logs - userController.js-homepage-MongoError: $in requires an array as a second argument, found: missing
+[2021-06-16T14:37:00.702] [ERROR] error_logs - ERROR
+[2021-06-16T14:37:40.945] [ERROR] error_logs - ERROR
+[2021-06-16T14:38:32.376] [ERROR] error_logs - ERROR
+[2021-06-16T14:38:52.699] [ERROR] error_logs - ERROR
+[2021-06-16T14:39:25.157] [ERROR] error_logs - ERROR
+[2021-06-16T14:39:31.159] [ERROR] error_logs - ERROR
+[2021-06-16T14:40:51.564] [ERROR] error_logs - ERROR
+[2021-06-16T14:41:40.887] [ERROR] error_logs - ERROR
+[2021-06-16T14:41:59.368] [ERROR] error_logs - ERROR
+[2021-06-16T14:43:11.636] [ERROR] error_logs - ERROR
+[2021-06-16T14:43:37.734] [ERROR] error_logs - ERROR
+[2021-06-16T14:46:05.080] [ERROR] error_logs - ERROR
+[2021-06-16T14:49:35.350] [ERROR] error_logs - ERROR
+[2021-06-16T14:49:49.995] [ERROR] error_logs - ERROR
+[2021-06-16T14:52:42.472] [ERROR] error_logs - ERROR
+[2021-06-16T14:52:45.690] [ERROR] error_logs - userController.js-homepage-MongoError: Unrecognized expression '$replyOf'
+[2021-06-16T14:52:56.023] [ERROR] error_logs - ERROR
+[2021-06-16T14:52:58.535] [ERROR] error_logs - userController.js-homepage-MongoError: Expression $eq takes exactly 2 arguments. 1 were passed in.
+[2021-06-16T14:53:46.846] [ERROR] error_logs - ERROR
+[2021-06-16T14:54:18.647] [ERROR] error_logs - ERROR
+[2021-06-16T14:54:20.926] [ERROR] error_logs - userController.js-homepage-MongoError: Expression $eq takes exactly 2 arguments. 1 were passed in.
+[2021-06-16T14:54:49.693] [ERROR] error_logs - ERROR
+[2021-06-16T14:54:52.064] [ERROR] error_logs - userController.js-homepage-MongoError: Expression $eq takes exactly 2 arguments. 1 were passed in.
+[2021-06-16T14:55:55.088] [ERROR] error_logs - ERROR
+[2021-06-16T14:56:00.534] [ERROR] error_logs - ERROR
+[2021-06-16T14:57:37.773] [ERROR] error_logs - ERROR
+[2021-06-16T14:58:02.691] [ERROR] error_logs - ERROR
+[2021-06-16T14:58:18.543] [ERROR] error_logs - ERROR
+[2021-06-16T14:58:22.915] [ERROR] error_logs - ERROR
+[2021-06-16T14:58:29.877] [ERROR] error_logs - ERROR
+[2021-06-16T14:58:55.582] [ERROR] error_logs - ERROR
+[2021-06-16T14:59:25.444] [ERROR] error_logs - ERROR
+[2021-06-16T15:00:02.353] [ERROR] error_logs - ERROR
+[2021-06-16T15:00:15.556] [ERROR] error_logs - ERROR
+[2021-06-16T15:00:55.650] [ERROR] error_logs - ERROR
+[2021-06-16T15:00:59.240] [ERROR] error_logs - userController.js-homepage-MongoError: Unrecognized expression '$replyOf'
+[2021-06-16T15:01:04.832] [ERROR] error_logs - ERROR
+[2021-06-16T15:01:45.707] [ERROR] error_logs - ERROR
+[2021-06-16T15:02:16.788] [ERROR] error_logs - ERROR
+[2021-06-16T15:02:21.645] [ERROR] error_logs - userController.js-homepage-MongoError: $lookup requires either 'pipeline' or both 'localField' and 'foreignField' to be specified
+[2021-06-16T15:13:28.208] [ERROR] error_logs - ERROR
+[2021-06-16T15:19:46.659] [ERROR] error_logs - ERROR
+[2021-06-16T15:20:38.239] [ERROR] error_logs - ERROR
+[2021-06-16T15:21:39.932] [ERROR] error_logs - ERROR
+[2021-06-16T15:42:13.405] [ERROR] error_logs - ERROR
+[2021-06-16T15:42:22.907] [ERROR] error_logs - ERROR
+[2021-06-16T15:47:31.754] [ERROR] error_logs - ERROR
+[2021-06-16T15:47:32.722] [ERROR] error_logs - userController.js-homepage-MongoError: Use of undefined variable: id
+[2021-06-16T15:47:42.457] [ERROR] error_logs - ERROR
+[2021-06-16T15:47:51.872] [ERROR] error_logs - ERROR
+[2021-06-16T16:00:29.139] [ERROR] error_logs - ERROR
+[2021-06-16T16:00:31.940] [ERROR] error_logs - ERROR
+[2021-06-16T16:00:47.995] [ERROR] error_logs - ERROR
+[2021-06-16T16:01:52.624] [ERROR] error_logs - ERROR
+[2021-06-16T16:02:28.755] [ERROR] error_logs - ERROR
+[2021-06-16T16:03:54.076] [ERROR] error_logs - ERROR
+[2021-06-16T16:04:04.426] [ERROR] error_logs - ERROR
+[2021-06-16T16:04:40.754] [ERROR] error_logs - ERROR
+[2021-06-16T16:06:35.230] [ERROR] error_logs - ERROR
+[2021-06-16T16:06:44.729] [ERROR] error_logs - ERROR
+[2021-06-16T16:06:52.610] [ERROR] error_logs - ERROR
+[2021-06-16T16:08:46.733] [ERROR] error_logs - ERROR
+[2021-06-16T16:09:19.508] [ERROR] error_logs - ERROR
+[2021-06-16T16:11:16.831] [ERROR] error_logs - ERROR
+[2021-06-16T16:12:17.598] [ERROR] error_logs - ERROR
+[2021-06-16T17:17:54.220] [ERROR] error_logs - ERROR
+[2021-06-16T17:18:15.603] [ERROR] error_logs - ERROR
+[2021-06-16T18:24:13.860] [ERROR] error_logs - ERROR
