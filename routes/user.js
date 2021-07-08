@@ -184,4 +184,57 @@ module.exports = app => {
         }
         userController.unFollow(req,res);
     })
+    app.post('/comment-like',[
+        body('commentId').not().trim().isEmpty().withMessage('commentId is required'),
+        body('userId').not().trim().isEmpty().withMessage('userId is required')
+    ],isAuthenticated,(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                status: 400,
+                message: errors.array()[0].msg,
+                data: {}
+            });
+        }
+        userController.addCommentLike(req,res);
+    })
+    app.post('/follower-list',[
+        body('userId').not().trim().isEmpty().withMessage('userId is required')
+    ],isAuthenticated,(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                status: 400,
+                message: errors.array()[0].msg,
+                data: {}
+            });
+        }
+        userController.followerList(req,res);
+    })
+    app.post('/following-list',[
+        body('userId').not().trim().isEmpty().withMessage('userId is required')
+    ],isAuthenticated,(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                status: 400,
+                message: errors.array()[0].msg,
+                data: {}
+            });
+        }
+        userController.followingList(req,res);
+    })
+    app.post('/usersProfile',[
+        body('userId').not().trim().isEmpty().withMessage('userId is required')
+    ],isAuthenticated,(req,res)=>{
+        const errors = validationResult(req);
+        if (!errors.isEmpty()) {
+            return res.status(400).json({
+                status: 400,
+                message: errors.array()[0].msg,
+                data: {}
+            });
+        }
+        userController.usersProfile(req,res);
+    })
 };

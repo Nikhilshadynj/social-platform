@@ -9,7 +9,7 @@ const utils = require('../lib/utils');
 const jwtKey = "secretkey";
 const jwtExpirySeconds = 86400; // expires in 24 hours
 const algor = 'HS256';
-
+const UserMetaData = require('../models/user-metaData')
 /**
  * @api {get} /role
  */
@@ -106,6 +106,11 @@ const register = async (req, res) => {
         newUser.email = req.body.email;
         newUser.password = req.body.password;
         await newUser.save()
+        const metaData = new UserMetaData({
+            userId : newUser._id,
+            privacy : false
+        })
+        await metaData.save()
         const token = jwt.sign({ userId: newUser._id }, jwtKey, {
             algorithm: algor,
             expiresIn: jwtExpirySeconds,

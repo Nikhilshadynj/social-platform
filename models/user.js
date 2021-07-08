@@ -56,6 +56,14 @@ const User = new Schema({
     friends : {
         type : String,
         default : '0'
+    },
+    followers : {
+        type : Number,
+        default : 0
+    },
+    followings : {
+        type : Number,
+        default : 0
     }
 }, { timestamps: true });
 
@@ -79,14 +87,5 @@ User.pre('save', function(next) {
         return next();
     }
 });
-
-/* User.methods.comparePassword = function(pw, cb) {
-    bcrypt.compare(pw, this.password, function(err, isMatch) {
-        if (err) {
-            return cb(err);
-        }
-        cb(null, isMatch);
-    });
-}; */
 
 module.exports = mongoose.model('User', User);

@@ -13,6 +13,9 @@ const Likes = require('../models/likes')
 const Comments = require('../models/comments')
 const mongoose = require('mongoose');
 const { pipeline } = require('stream');
+const CommentsLikes = require('../models/commentsLikes');
+const UserMetaData = require('../models/user-metaData')
+const Request = require('../models/requests')
 require('dotenv')
 /**
  * @api {get} /user GetCurrentUser
@@ -75,6 +78,7 @@ const updateCurrentUser = async (req, res) => {
         userId
     } = req.body
     try {
+        for (let prop in req.body) if (!req.body[prop]) delete req.body[prop];
         const user = await User.findByIdAndUpdate(userId, req.body, { new: true })
         if (!user) {
             return res.status(404).json({
@@ -308,11 +312,32 @@ const followUser = async (req, res) => {
                         message: 'Already Followed', status: 400, data: {}
                     })
                 }
+                const accountPrivacy = await UserMetaData.findOne({userId : destinationId})
+                if(accountPrivacy){
+                    if(accountPrivacy.privacy === true){
+                        const alreadyRequested = await Request.findOne({$and : [{requestedId : destinationId},{requestingId : sourceId}]})
+                        if(alreadyRequested){
+                            return res.status(400).json({
+                                message : 'Already Requested',status : 400,data : {}
+                            })
+                        }
+                        const request = new Request({
+                            requestedId : destinationId,
+                            requestingId : sourceId
+                        })
+                        await request.save()
+                        return res.status(200).json({
+                            message : 'Request Sent',status : 200, data :{}
+                        })
+                    }
+                }
                 const following = new Follower({
                     sourceId: sourceId,
                     destinationId: destinationId
                 })
                 await following.save()
+                await User.findByIdAndUpdate(sourceId, { $inc: { followings: 1 } })
+                await User.findByIdAndUpdate(destinationId, { $inc: { followers: 1 } })
                 return res.status(200).json({
                     message: 'Success', code: 200, data: {}
                 })
@@ -403,7 +428,6 @@ const homePage = async (req, res) => {
             idArray.push(item.destinationId)
             looptwo()
         })
-        // const post = await Post.paginate({"userId" : {$in : idArray}},{page : req.query.page,sort : {createdAt : -1}})
         const post = Post.aggregate([
             {
                 $sort: {
@@ -426,7 +450,7 @@ const homePage = async (req, res) => {
             {
                 $lookup: {
                     from: "likes",
-                    let : {id : "$_id"},
+                    let: { id: "$_id" },
                     pipeline: [
                         {
                             $match: {
@@ -462,16 +486,16 @@ const homePage = async (req, res) => {
                 }
             },
             {
-                $lookup : {
-                    from : "users",
-                    localField : 'userId',
-                    foreignField : '_id',
-                    as : 'user'
+                $lookup: {
+                    from: "users",
+                    localField: 'userId',
+                    foreignField: '_id',
+                    as: 'user'
                 }
             },
             {
                 $unwind: {
-                    path:"$user",preserveNullAndEmptyArrays:true
+                    path: "$user", preserveNullAndEmptyArrays: true
                 }
             },
             {
@@ -479,25 +503,26 @@ const homePage = async (req, res) => {
                     lat: "$postLat",
                     long: "$postLong",
                     caption: "$caption",
-                    userName: {$concat : ["$user.first_name",' ', "$user.last_name"]},
-                    "profile_image" : {
-                        $cond: { if: "$user.profile_image", then: {$concat : [process.env.BASE_URL,"profile-pictures","/",{"$toString": "$user._id"},"/","$user.profile_image"]}, else: '' }
-                      },
-                    file : {
-                        $map : {
-                            input : "$file" ,
-                            as : 'filePath',
-                            in : {
-                                "name" : {$concat : [process.env.BASE_URL,"post","/",{"$toString": "$userId"},"/","$$filePath.name"]},
+                    userName: { $concat: ["$user.first_name", ' ', "$user.last_name"] },
+                    "profile_image": {
+                        $cond: { if: "$user.profile_image", then: { $concat: [process.env.BASE_URL, "profile-pictures", "/", { "$toString": "$user._id" }, "/", "$user.profile_image"] }, else: '' }
+                    },
+                    userId : "$user._id",
+                    file: {
+                        $map: {
+                            input: "$file",
+                            as: 'filePath',
+                            in: {
+                                "name": { $concat: [process.env.BASE_URL, "post", "/", { "$toString": "$userId" }, "/", "$$filePath.name"] },
                             }
                         }
                     },
                     numOfLikes: { $size: "$likes" },
                     numOfComments: { $size: "$comments" },
-                    time : "$createdAt",
-                    likedByUser : {
-                        $cond: { if: {$gt : [{$size : "$likedByUser"},0]}, then: true, else: false }
-                      },
+                    time: "$createdAt",
+                    likedByUser: {
+                        $cond: { if: { $gt: [{ $size: "$likedByUser" }, 0] }, then: true, else: false }
+                    },
                 }
             }
         ])
@@ -600,9 +625,9 @@ const getComments = async (req, res) => {
     const postId = req.body.postId
     try {
         const post = await Post.findById(postId)
-        if(!post){
+        if (!post) {
             return res.status(404).json({
-                message : 'Post Not Found',status : 404 , data : {}
+                message: 'Post Not Found', status: 404, data: {}
             })
         }
         const data = Comments.aggregate([
@@ -612,18 +637,18 @@ const getComments = async (req, res) => {
                 }
             },
             {
-                $match : {
-                        $and : [
-                            {"postId" : mongoose.Types.ObjectId(postId)},
-                            {"replyOf":null},
-                        ]
+                $match: {
+                    $and: [
+                        { "postId": mongoose.Types.ObjectId(postId) },
+                        { "replyOf": null },
+                    ]
                 }
             },
             {
-                $lookup : {
-                    from : "comments",
-                    let : {commentId : "$_id"},
-                    pipeline : [
+                $lookup: {
+                    from: "comments",
+                    let: { commentId: "$_id" },
+                    pipeline: [
                         {
                             $match: {
                                 $expr: {
@@ -635,41 +660,50 @@ const getComments = async (req, res) => {
                             }
                         }
                     ],
-                    as : 'replies'
+                    as: 'replies'
                 }
             },
             {
-                $lookup : {
-                    from : "users",
-                    localField : 'userId',
-                    foreignField : '_id',
-                    as : 'user'
+                $lookup: {
+                    from: "users",
+                    localField: 'userId',
+                    foreignField: '_id',
+                    as: 'user'
+                }
+            },
+            {
+                $lookup: {
+                    from: "commentslikes",
+                    localField: '_id',
+                    foreignField: 'commentId',
+                    as: 'commentsLikes'
                 }
             },
             {
                 $unwind: {
-                    path:"$user",preserveNullAndEmptyArrays:true
+                    path: "$user", preserveNullAndEmptyArrays: true
                 }
             },
             {
                 $project: {
-                    comment : "$comment",
+                    comment: "$comment",
                     postId: "$postId",
-                    "user.first_name" : 1,
-                    "user.last_name" : 1,
-                    "user.profile_image" : {
-                        $cond: { if: "$user.profile_image", then: {$concat : [process.env.BASE_URL,"profile-pictures","/",{"$toString": "$user._id"},"/","$user.profile_image"]}, else: '' }
-                      },
+                    "user.first_name": 1,
+                    "user.last_name": 1,
+                    "user.profile_image": {
+                        $cond: { if: "$user.profile_image", then: { $concat: [process.env.BASE_URL, "profile-pictures", "/", { "$toString": "$user._id" }, "/", "$user.profile_image"] }, else: '' }
+                    },
                     "user._id": 1,
                     numOfReplies: { $size: "$replies" },
+                    numOfLikes: { $size: '$commentsLikes' }
                 }
             }
         ])
         const result = await Comments.aggregatePaginate(data, { page: req.query.page })
         return res.status(200).json({
-            message : 'Success',status:200,data:result
+            message: 'Success', status: 200, data: result
         })
-    } catch(e){
+    } catch (e) {
         userErrorLogger.ERROR_LOG.error(`userController.js-getComments-${e}`);
         return res.status(400).json({
             message: e.message, status: 400, data: {}
@@ -677,13 +711,13 @@ const getComments = async (req, res) => {
     }
 }
 
-const getReplies = async (req,res)=>{
+const getReplies = async (req, res) => {
     const commentId = req.body.commentId
     try {
         const comment = await Comments.findById(commentId)
-        if(!comment){
+        if (!comment) {
             return res.status(404).json({
-                message : 'Comment Not Found',status:404,data : {}
+                message: 'Comment Not Found', status: 404, data: {}
             })
         }
         const data = Comments.aggregate([
@@ -693,30 +727,38 @@ const getReplies = async (req,res)=>{
                 }
             },
             {
-                $match : {
-                        $and : [
-                            {"replyOf" : mongoose.Types.ObjectId(commentId)}
-                        ]
+                $match: {
+                    $and: [
+                        { "replyOf": mongoose.Types.ObjectId(commentId) }
+                    ]
                 }
             },
             {
-                $lookup : {
-                    from : "users",
-                    localField : 'userId',
-                    foreignField : '_id',
-                    as : 'user'
+                $lookup: {
+                    from: "users",
+                    localField: 'userId',
+                    foreignField: '_id',
+                    as: 'user'
+                }
+            },
+            {
+                $lookup: {
+                    from: "commentslikes",
+                    localField: '_id',
+                    foreignField: 'commentId',
+                    as: 'commentsLikes'
                 }
             },
             {
                 $unwind: {
-                    path:"$user",preserveNullAndEmptyArrays:true
+                    path: "$user", preserveNullAndEmptyArrays: true
                 }
             },
             {
-                $lookup : {
-                    from : "comments",
-                    let : {commentId : "$_id"},
-                    pipeline : [
+                $lookup: {
+                    from: "comments",
+                    let: { commentId: "$_id" },
+                    pipeline: [
                         {
                             $match: {
                                 $expr: {
@@ -727,28 +769,29 @@ const getReplies = async (req,res)=>{
                             }
                         }
                     ],
-                    as : 'replies'
+                    as: 'replies'
                 }
             },
             {
                 $project: {
-                    comment : "$comment",
+                    comment: "$comment",
                     postId: "$postId",
-                    "user.first_name" : 1,
-                    "user.last_name" : 1,
-                    "user.profile_image" : {
-                        $cond: { if: "$user.profile_image", then: {$concat : [process.env.BASE_URL,"profile-pictures","/",{"$toString": "$user._id"},"/","$user.profile_image"]}, else: '' }
-                      },
+                    "user.first_name": 1,
+                    "user.last_name": 1,
+                    "user.profile_image": {
+                        $cond: { if: "$user.profile_image", then: { $concat: [process.env.BASE_URL, "profile-pictures", "/", { "$toString": "$user._id" }, "/", "$user.profile_image"] }, else: '' }
+                    },
                     "user._id": 1,
                     numOfReplies: { $size: "$replies" },
+                    numOfLikes: { $size: '$commentsLikes' }
                 }
             }
         ])
         const result = await Comments.aggregatePaginate(data, { page: req.query.page })
         return res.status(200).json({
-            message : 'Success',status:200,data:result
+            message: 'Success', status: 200, data: result
         })
-    } catch(e) {
+    } catch (e) {
         userErrorLogger.ERROR_LOG.error(`userController.js-getReplies-${e}`);
         return res.status(400).json({
             message: e.message, status: 400, data: {}
@@ -756,13 +799,13 @@ const getReplies = async (req,res)=>{
     }
 }
 
-const unLike = async (req,res)=>{
+const unLike = async (req, res) => {
     const postId = req.body.postId
     const userId = req.body.userId
     try {
-        const like = await Likes.findOneAndDelete({$and : [{postId: postId},{userId:userId}] })
+        const like = await Likes.findOneAndDelete({ $and: [{ postId: postId }, { userId: userId }] })
         return res.status(200).json({
-            message : 'Deleted',status:200,data:like
+            message: 'Deleted', status: 200, data: like
         })
     } catch (e) {
         userErrorLogger.ERROR_LOG.error(`userController.js-unLike-${e}`);
@@ -771,16 +814,197 @@ const unLike = async (req,res)=>{
         })
     }
 }
-const unFollow = async (req,res)=>{
+const unFollow = async (req, res) => {
     const sourceId = req.body.sourceId
     const destinationId = req.body.destinationId
     try {
-        const user = await Follower.findOneAndDelete({$and : [{sourceId: sourceId},{destinationId:destinationId}] })
+        const user = await Follower.findOneAndDelete({ $and: [{ sourceId: sourceId }, { destinationId: destinationId }] })
+        await User.findByIdAndUpdate(sourceId, { $inc: { followings: -1 } })
+        await User.findByIdAndUpdate(destinationId, { $inc: { followers: -1 } })
         return res.status(200).json({
-            message : 'Deleted',status:200,data:user
+            message: 'Deleted', status: 200, data: user
         })
     } catch (e) {
         userErrorLogger.ERROR_LOG.error(`userController.js-unFollow-${e}`);
+        return res.status(400).json({
+            message: e.message, status: 400, data: {}
+        })
+    }
+}
+
+const addCommentLike = async (req, res) => {
+    const { userId, commentId } = req.body
+    try {
+        const userFirst = await User.findById(userId)
+        if (!userFirst) {
+            return res.status(404).json({
+                message: 'User Not Found', code: 404, data: {}
+            })
+        }
+        const comment = await Comments.findById(commentId)
+        if (!comment) {
+            return res.status(404).json({
+                message: 'Comment Not Found', code: 404, data: {}
+            })
+        }
+        const previousLike = await CommentsLikes.findOne({ $and: [{ commentId: commentId }, { userId: userId }] })
+        if (previousLike) {
+            return res.status(400).json({
+                message: 'Already Liked', status: 400, data: {}
+            })
+        }
+        const like = new CommentsLikes({
+            commentId, userId
+        })
+        await like.save()
+        return res.status(200).json({
+            message: 'Success', status: 200, data: {}
+        })
+    } catch (e) {
+        userErrorLogger.ERROR_LOG.error(`userController.js-addCommentLike-${e}`);
+        return res.status(400).json({
+            message: e.message, status: 400, data: {}
+        })
+    }
+}
+
+const followerList = async (req, res) => {
+    const userId = req.body.userId
+    try {
+        const user = await User.findById(userId)
+        if (!user) {
+            return res.status(404).json({
+                message: 'User Not Found', status: 404, data: {}
+            })
+        }
+        const data = Follower.aggregate([
+            {
+                $match: {
+                    "destinationId": mongoose.Types.ObjectId(userId)
+                }
+            },
+            {
+                $lookup: {
+                    from: 'users',
+                    foreignField: '_id',
+                    localField: 'sourceId',
+                    as: 'users'
+                }
+            },
+            {
+                $unwind: {
+                    path: "$users", preserveNullAndEmptyArrays: true
+                }
+            },
+            {
+                $project: {
+                    "_id": 0,
+                    "first_name": "$users.first_name",
+                    "last_name": "$users.last_name",
+                    "profile_image": {
+                        $cond: { if: "$users.profile_image", then: { $concat: [process.env.BASE_URL, "profile-pictures", "/", { "$toString": "$users._id" }, "/", "$users.profile_image"] }, else: '' }
+                    },
+                    "userId": "$users._id",
+                    "followers" : "$users.followers",
+                    "followings" : "$users.followings",
+                }
+            }
+        ])
+        const result = await Follower.aggregatePaginate(data, { page: req.query.page })
+        return res.status(200).json({
+            message: 'Success', status: 200, data: result
+        })
+    } catch (e) {
+        userErrorLogger.ERROR_LOG.error(`userController.js-followerList-${e}`);
+        return res.status(400).json({
+            message: e.message, status: 400, data: {}
+        })
+    }
+}
+
+const followingList = async (req, res) => {
+    const userId = req.body.userId
+    try {
+        const user = await User.findById(userId)
+        if (!user) {
+            return res.status(404).json({
+                message: 'User Not Found', status: 404, data: {}
+            })
+        }
+        const data = Follower.aggregate([
+            {
+                $match: {
+                    "sourceId": mongoose.Types.ObjectId(userId)
+                }
+            },
+            {
+                $lookup: {
+                    from: 'users',
+                    foreignField: '_id',
+                    localField: 'destinationId',
+                    as: 'users'
+                }
+            },
+            {
+                $unwind: {
+                    path: "$users", preserveNullAndEmptyArrays: true
+                }
+            },
+            {
+                $project: {
+                    "_id": 0,
+                    "first_name": "$users.first_name",
+                    "last_name": "$users.last_name",
+                    "profile_image": {
+                        $cond: { if: "$users.profile_image", then: { $concat: [process.env.BASE_URL, "profile-pictures", "/", { "$toString": "$users._id" }, "/", "$users.profile_image"] }, else: '' }
+                    },
+                    "userId": "$users._id",
+                    "followers" : "$users.followers",
+                    "followings" : "$users.followings",
+                }
+            }
+        ])
+        const result = await Follower.aggregatePaginate(data, { page: req.query.page })
+        return res.status(200).json({
+            message: 'Success', status: 200, data: result
+        })
+    } catch (e) {
+        userErrorLogger.ERROR_LOG.error(`userController.js-followingList-${e}`);
+        return res.status(400).json({
+            message: e.message, status: 400, data: {}
+        })
+    }
+}
+
+const usersProfile = async (req,res)=>{
+    const userId = req.body.userId
+    try {
+        const user = await User.findById(userId)
+        if (user) {
+            return res.status(200).json({
+                status: 200,
+                message: 'Success!',
+                data: {
+                    first_name: user.first_name !== null ? user.first_name : '',
+                    last_name: user.last_name !== null ? user.last_name : '',
+                    age: user.age !== null ? user.age : '',
+                    location: user.location !== null ? user.location : '',
+                    selfIntroduction: user.selfIntroduction !== null ? user.selfIntroduction : '',
+                    gender: user.gender !== null ? user.gender : '',
+                    followers: user.followers,
+                    following: user.followings,
+                    friends: user.friends !== null ? user.friends : 0,
+                    profile_image: user.profile_image !== null ? path.join(process.env.BASE_URL, 'profile-pictures' + '/' + user._id.toString() + '/' + user.profile_image) : '',
+                    userType : user.userType ? user.userType : 'VIP'
+                }
+            });
+        } else {
+            return res.status(404).json({
+                message: 'User Not Found', code: 404, data: {}
+            })
+        }
+    } catch (error) {
+        userErrorLogger.ERROR_LOG.error(`userController.js-usersProfile-${e}`);
         return res.status(400).json({
             message: e.message, status: 400, data: {}
         })
@@ -835,5 +1059,9 @@ module.exports = {
     getComments,
     getReplies,
     unLike,
-    unFollow
+    unFollow,
+    addCommentLike,
+    followerList,
+    followingList,
+    usersProfile
 };

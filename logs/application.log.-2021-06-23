@@ -1,0 +1,28 @@
+[2021-06-23T10:35:25.616] [ERROR] error_logs - ERROR
+[2021-06-23T10:38:36.238] [ERROR] error_logs - ERROR
+[2021-06-23T10:39:52.340] [ERROR] error_logs - ERROR
+[2021-06-23T10:40:58.459] [ERROR] error_logs - ERROR
+[2021-06-23T10:41:00.843] [ERROR] error_logs - userController.js-followerList-TypeError: Follower.aggregatePaginate is not a function
+[2021-06-23T10:41:49.516] [ERROR] error_logs - ERROR
+[2021-06-23T10:42:41.844] [ERROR] error_logs - ERROR
+[2021-06-23T10:43:53.066] [ERROR] error_logs - ERROR
+[2021-06-23T10:44:40.325] [ERROR] error_logs - ERROR
+[2021-06-23T10:44:44.369] [ERROR] error_logs - userController.js-followerList-MongoError: Invalid $project :: caused by :: FieldPath field names may not start with '$'.
+[2021-06-23T10:44:51.737] [ERROR] error_logs - ERROR
+[2021-06-23T10:45:30.959] [ERROR] error_logs - ERROR
+[2021-06-23T10:52:01.369] [ERROR] error_logs - ERROR
+[2021-06-23T10:52:10.876] [ERROR] error_logs - ERROR
+[2021-06-23T10:53:03.687] [ERROR] error_logs - ERROR
+[2021-06-23T10:58:23.871] [ERROR] error_logs - ERROR
+[2021-06-23T10:58:42.616] [ERROR] error_logs - ERROR
+[2021-06-23T11:13:32.926] [ERROR] error_logs - ERROR
+[2021-06-23T11:14:45.396] [ERROR] error_logs - ERROR
+[2021-06-23T11:22:09.381] [ERROR] error_logs - ERROR
+[2021-06-23T12:04:31.884] [ERROR] error_logs - ERROR
+[2021-06-23T12:07:30.305] [ERROR] error_logs - ERROR
+[2021-06-23T12:07:47.114] [ERROR] error_logs - ERROR
+[2021-06-23T12:08:06.821] [ERROR] error_logs - ERROR
+[2021-06-23T16:12:00.188] [ERROR] error_logs - ERROR
+[2021-06-23T16:12:12.345] [ERROR] error_logs - ERROR
+[2021-06-23T16:12:43.419] [ERROR] error_logs - ERROR
+[2021-06-23T16:17:22.050] [ERROR] error_logs - ERROR

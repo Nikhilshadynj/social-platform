@@ -311,6 +311,27 @@ paths:
       responses: 
         '201':
           description: Add Like
+  /comment-like:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Add Like To Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                commentId:
+                  type: string
+      responses: 
+        '201':
+          description: Add Like To Comment 
   /getComments:
     post:
       tags:
@@ -398,7 +419,64 @@ paths:
                   type: string
       responses: 
         '201':
-          description: Unfollow                                                                  
+          description: Unfollow
+  /follower-list:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Follower List
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: Follower
+  /following-list:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Following List
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: Following List
+  /usersProfile:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: User's Profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: User's Profile                                                                                            
 components:
   parameters:
     headerLanguage:
