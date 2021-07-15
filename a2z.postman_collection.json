@@ -1,0 +1,167 @@
+{
+	"id": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+	"name": "a2z",
+	"description": "",
+	"order": [
+		"d63f0063-0a03-c813-615d-01662a14f28b",
+		"440bb014-86fd-e95f-5d63-81b1d4be3a1b",
+		"01142df8-a306-ca1e-8e59-753a8d84e1fc",
+		"a792d640-d264-42ed-4431-e6743d0ef8e7",
+		"253b739c-48dd-84be-66e2-4f00f0c730e8"
+	],
+	"folders": [],
+	"folders_order": [],
+	"timestamp": 1621481424594,
+	"owner": 0,
+	"public": false,
+	"requests": [
+		{
+			"id": "01142df8-a306-ca1e-8e59-753a8d84e1fc",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://a2z.ezxdemo.com/login",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1621579676837,
+			"name": "localhost:5000/login",
+			"description": "",
+			"collectionId": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"nikhiljoshi742@gmail.com\",\n\t\"password\":\"456451\"\n}"
+		},
+		{
+			"id": "253b739c-48dd-84be-66e2-4f00f0c730e8",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://a2z.ezxdemo.com/change-password",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1621579599101,
+			"name": "localhost:5000/change-password",
+			"description": "",
+			"collectionId": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"nikhiljoshi742@gmail.com\",\n\t\"password\":\"456456\"\n}"
+		},
+		{
+			"id": "440bb014-86fd-e95f-5d63-81b1d4be3a1b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "https://a2z.ezxdemo.com/register",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"version": 2,
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1621579586795,
+			"name": "register",
+			"description": "",
+			"collectionId": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+			"responses": [],
+			"rawModeData": "{\n\t\"first_name\":\"nikhil\",\n\t\"last_name\":\"joshi\",\n\t\"email\":\"nikhiljoshi742@gmail.com\",\n\t\"password\":\"123456\",\n\t\"role\":\"user\"\n}"
+		},
+		{
+			"id": "a792d640-d264-42ed-4431-e6743d0ef8e7",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:5000/verify-otp",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1621573474592,
+			"name": "localhost:5000/verify-otp",
+			"description": "",
+			"collectionId": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"nikhiljoshi742@gmail.com\",\n\t\"otp\":\"1234\"\n}"
+		},
+		{
+			"id": "d63f0063-0a03-c813-615d-01662a14f28b",
+			"headers": "Content-Type: application/json\n",
+			"headerData": [
+				{
+					"key": "Content-Type",
+					"value": "application/json",
+					"description": "",
+					"enabled": true
+				}
+			],
+			"url": "localhost:5000/forget-password",
+			"queryParams": [],
+			"preRequestScript": null,
+			"pathVariables": {},
+			"pathVariableData": [],
+			"method": "POST",
+			"data": [],
+			"dataMode": "raw",
+			"tests": null,
+			"currentHelper": "normal",
+			"helperAttributes": {},
+			"time": 1621488331061,
+			"name": "forget-password",
+			"description": "",
+			"collectionId": "769f4bb4-95b8-3ac2-c02a-ce97ebb8dd6a",
+			"responses": [],
+			"rawModeData": "{\n\t\"email\":\"nikhiljoshi742@gmail.com\"\n}"
+		}
+	]
+}

@@ -1,0 +1,580 @@
+openapi: "3.0.2"
+info:
+  version: 1.0.0
+  title: A2Z
+tags:
+  - name: A2Z
+    description: Operations related to A2Z
+paths:  
+  /login:    
+    post:
+      tags:
+        - Users
+      summary: User Login.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses: 
+        '201':
+          description: Login
+  /change-password:    
+    post:
+      tags:
+        - Users
+      summary: User Change Password.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                password:
+                  type: string
+      responses: 
+        '201':
+          description: Change Password
+  /register:    
+    post:
+      tags:
+        - Users
+      summary: User register.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                email:
+                  type: string
+                password:
+                  type: string
+                role:
+                  type: string
+                mobile:
+                  type: string
+                referral_code : 
+                  type : string  
+      responses: 
+        '201':
+          description: Register
+  /forget-password:    
+    post:
+      tags:
+        - Users
+      summary: Forget password
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+      responses: 
+        '201':
+          description: Forget Password
+  /verify-otp:    
+    post:
+      tags:
+        - Users
+      summary: Verify Otp
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email:
+                  type: string
+                otp:
+                  type: string
+      responses: 
+        '201':
+          description: Verify Otp
+  /user-profile/{id}:    
+    get:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Get user profile.
+        content:
+          application/json:
+            schema:
+              type: object
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: User Id.
+      responses: 
+        '201':
+          description: User Profile 
+  /get-all-user:    
+    get:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []  
+      summary: Get All Users
+        content:
+          application/json:
+            schema:
+              type: object
+      responses: 
+        '200':
+          description: Get All Users
+  /follow-user:    
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []  
+      summary: Follow User
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sourceId:
+                  type: string
+                destinationId:
+                  type: string
+      responses: 
+        '201':
+          description: Follow User
+  /profile-update:
+    put:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Profile Update
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                first_name:
+                  type: string
+                last_name:
+                  type: string
+                age:
+                  type: string
+                gender:
+                  type: string
+                location:
+                  type: string
+                selfIntroduction:
+                  type: string
+      responses: 
+        '201':
+          description: Profile Update
+  /update-profilePicture:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []  
+      summary: Profile Picture Update
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                photo:
+                  type: file
+      responses: 
+        '201':
+          description: Profile Picture Update
+  /homePage:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []  
+      summary: Home Page
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      parameters:
+          - name: page
+            in: query
+            description: Page.
+      responses: 
+        '201':
+          description: Home Page
+  /upload-post:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []  
+      summary: Upload post
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                lat:
+                  type: string
+                long:
+                  type: string
+                caption:
+                  type: string
+                post:
+                  type: file
+      responses: 
+        '201':
+          description: Upload post
+  /addComment:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Add Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                postId:
+                  type: string
+                comment:
+                  type: string
+                parentId:
+                  type: string
+      responses: 
+        '201':
+          description: Add Comment
+  /addLike:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Add Like
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                postId:
+                  type: string
+      responses: 
+        '201':
+          description: Add Like
+  /comment-like:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Add Like To Comment
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                commentId:
+                  type: string
+      responses: 
+        '201':
+          description: Add Like To Comment 
+  /getComments:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Get Comments
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                postId:
+                  type: string
+      parameters:
+          - name: page
+            in: query
+            description: Page.            
+      responses: 
+        '201':
+          description: get Comments
+  /getReplies:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Get Replies
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                commentId:
+                  type: string
+      parameters:
+          - name: page
+            in: query
+            description: Page.            
+      responses: 
+        '201':
+          description: get Replies
+  /unLike:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Unlike
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+                postId:
+                  type: string
+      responses: 
+        '201':
+          description: Unlike
+  /unFollow:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Unfollow
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                sourceId:
+                  type: string
+                destinationId:
+                  type: string
+      responses: 
+        '201':
+          description: Unfollow
+  /follower-list:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Follower List
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: Follower
+  /following-list:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: Following List
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: Following List
+  /usersProfile:
+    post:
+      tags:
+        - Users
+      security:
+        - ApiKeyAuth: []
+      summary: User's Profile
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                userId:
+                  type: string
+      responses: 
+        '201':
+          description: User's Profile                                                                                            
+components:
+  parameters:
+    headerLanguage:
+      name: Accept-Language
+      in: header
+      required: true
+      schema:
+        type: string
+        default: en
+        enum:
+          - en
+    headerPlatform:
+      name: device-os
+      in: header
+      required: true
+      schema:
+        type: string
+        default: web
+        enum:
+          - web
+          - ios
+          - android
+    headerVersion:
+      name: accept-version
+      in: header
+      required: true
+      schema:
+        type: string
+        default: 1.0.0
+        pattern: '^[\d]+\.[\d]+\.[\d]+$'
+    headerModel:
+      name: device-model
+      in: header
+      required: true
+      schema:
+        type: string
+        default: "XR"
+    headerId:
+      name: device-id
+      in: header
+      required: true
+      schema:
+        type: string
+        default: "XR-147856"
+    headerToken:
+      name: device-token
+      in: header
+      required: true
+      schema:
+        type: string
+        default: "6yE2qXmZSM1e2cBo99w8dc8IeXFzDvmc4P5WlWat"
+    osVersion:
+      name: os-version
+      in: header
+      required: true
+      schema:
+        type: string
+        default: "13.1.0"
+    queryPerPage:
+      in: query
+      name: perPage
+      description: number of records per page
+      allowEmptyValue: false
+      required: false
+      schema:
+        type: integer
+    queryPage:
+      in: query
+      name: page
+      description: page number
+      allowEmptyValue: false
+      required: false
+      schema:
+        type: integer  
+   
+  securitySchemes:
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      name: x-access-token
+  responses:
+    BadRequestError:
+      description: Request fails validation or doesn't meet all conditions for request
+      content:
+        application/json:
+          schema:
+            example:
+              success: false
+              message: "Validation failed"
+              data: ""
+            allOf:
+              - $ref: "#/components/schemas/ApiResponse"
+              - type: object
+                properties:
+                  data:
+                    type: object
+                    nullable: true
+    NotFoundError:
+      description: Requested resource was not found
+    UnauthorizedError:
+      description: Access token is missing or invalid

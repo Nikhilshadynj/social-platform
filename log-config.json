@@ -1,0 +1,38 @@
+{
+    "appenders": {
+      "app": {
+        "type": "console",
+        "layout": {
+          "type": "pattern",
+          "pattern": "%m"
+        },
+        "category": "app"
+      },
+      "application_logs": {
+        "category": "application_logs",
+        "type": "dateFile",
+        "filename": "logs/application.log",
+        "pattern": "-yyyy-MM-dd",
+        "backups": 9999999999,
+        "alwaysIncludePattern": false
+      },
+      "error_logs": {
+        "category": "error_logs",
+        "type": "dateFile",
+        "filename": "logs/error.log",
+        "pattern": "-yyyy-MM-dd",
+        "backups": 9999999999,
+        "alwaysIncludePattern": false
+      }
+    },
+    "categories": {
+      "default": {
+        "appenders": [
+          "error_logs",
+          "application_logs"
+        ],
+        "level": "error"
+      }
+    },
+    "pm2":true
+  }
