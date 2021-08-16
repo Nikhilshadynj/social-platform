@@ -1,0 +1,103 @@
+[2021-08-10T11:08:32.131] [ERROR] error_logs - ERROR
+[2021-08-10T11:09:08.367] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $gt
+[2021-08-10T11:14:03.371] [ERROR] error_logs - ERROR
+[2021-08-10T11:15:24.373] [ERROR] error_logs - ERROR
+[2021-08-10T11:15:28.344] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $gt
+[2021-08-10T11:17:33.159] [ERROR] error_logs - ERROR
+[2021-08-10T11:19:28.156] [ERROR] error_logs - ERROR
+[2021-08-10T11:21:08.105] [ERROR] error_logs - ERROR
+[2021-08-10T11:23:28.577] [ERROR] error_logs - ERROR
+[2021-08-10T11:24:23.482] [ERROR] error_logs - ERROR
+[2021-08-10T11:26:21.574] [ERROR] error_logs - ERROR
+[2021-08-10T11:27:08.707] [ERROR] error_logs - ERROR
+[2021-08-10T11:28:11.436] [ERROR] error_logs - ERROR
+[2021-08-10T11:28:25.664] [ERROR] error_logs - ERROR
+[2021-08-10T11:32:40.656] [ERROR] error_logs - ERROR
+[2021-08-10T11:32:41.665] [ERROR] error_logs - userController.js-homepageStory-ReferenceError: date is not defined
+[2021-08-10T11:33:13.262] [ERROR] error_logs - ERROR
+[2021-08-10T11:33:40.180] [ERROR] error_logs - ERROR
+[2021-08-10T11:35:04.415] [ERROR] error_logs - ERROR
+[2021-08-10T11:35:13.224] [ERROR] error_logs - ERROR
+[2021-08-10T11:35:14.611] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $duration
+[2021-08-10T11:35:22.023] [ERROR] error_logs - ERROR
+[2021-08-10T11:35:32.384] [ERROR] error_logs - ERROR
+[2021-08-10T11:35:33.974] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $$duration
+[2021-08-10T11:36:46.804] [ERROR] error_logs - ERROR
+[2021-08-10T11:36:49.658] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $$duration
+[2021-08-10T11:36:54.990] [ERROR] error_logs - ERROR
+[2021-08-10T11:36:56.055] [ERROR] error_logs - userController.js-homepageStory-Error: Arguments must be aggregate pipeline operators
+[2021-08-10T11:37:25.108] [ERROR] error_logs - ERROR
+[2021-08-10T11:37:27.313] [ERROR] error_logs - userController.js-homepageStory-Error: Arguments must be aggregate pipeline operators
+[2021-08-10T11:37:28.046] [ERROR] error_logs - userController.js-homepageStory-Error: Arguments must be aggregate pipeline operators
+[2021-08-10T11:37:39.617] [ERROR] error_logs - ERROR
+[2021-08-10T11:38:18.866] [ERROR] error_logs - ERROR
+[2021-08-10T11:39:01.366] [ERROR] error_logs - ERROR
+[2021-08-10T11:39:05.087] [ERROR] error_logs - userController.js-homepageStory-Error: Arguments must be aggregate pipeline operators
+[2021-08-10T11:39:23.840] [ERROR] error_logs - ERROR
+[2021-08-10T11:39:24.728] [ERROR] error_logs - userController.js-homepageStory-MongoError: Unrecognized pipeline stage name: '$gt'
+[2021-08-10T11:39:52.635] [ERROR] error_logs - ERROR
+[2021-08-10T11:39:56.875] [ERROR] error_logs - ERROR
+[2021-08-10T11:40:02.976] [ERROR] error_logs - userController.js-homepageStory-MongoError: Unrecognized pipeline stage name: '$gt'
+[2021-08-10T11:41:43.137] [ERROR] error_logs - ERROR
+[2021-08-10T11:42:15.080] [ERROR] error_logs - ERROR
+[2021-08-10T11:42:45.501] [ERROR] error_logs - ERROR
+[2021-08-10T11:42:47.331] [ERROR] error_logs - userController.js-homepageStory-MongoError: unknown top level operator: $gt
+[2021-08-10T11:43:07.936] [ERROR] error_logs - ERROR
+[2021-08-10T11:43:47.413] [ERROR] error_logs - ERROR
+[2021-08-10T11:47:03.710] [ERROR] error_logs - ERROR
+[2021-08-10T11:47:29.186] [ERROR] error_logs - ERROR
+[2021-08-10T12:27:39.583] [ERROR] error_logs - ERROR
+[2021-08-10T12:33:03.433] [ERROR] error_logs - ERROR
+[2021-08-10T12:33:11.658] [ERROR] error_logs - ERROR
+[2021-08-10T12:33:27.604] [ERROR] error_logs - ERROR
+[2021-08-10T12:34:20.693] [ERROR] error_logs - ERROR
+[2021-08-10T12:35:04.571] [ERROR] error_logs - ERROR
+[2021-08-10T12:35:26.189] [ERROR] error_logs - ERROR
+[2021-08-10T12:36:09.787] [ERROR] error_logs - ERROR
+[2021-08-10T12:36:31.072] [ERROR] error_logs - ERROR
+[2021-08-10T12:37:12.377] [ERROR] error_logs - ERROR
+[2021-08-10T12:37:52.079] [ERROR] error_logs - ERROR
+[2021-08-10T13:59:49.039] [ERROR] error_logs - ERROR
+[2021-08-10T14:00:27.645] [ERROR] error_logs - ERROR
+[2021-08-10T15:10:07.119] [ERROR] error_logs - ERROR
+[2021-08-10T15:10:50.123] [ERROR] error_logs - ERROR
+[2021-08-10T15:11:25.264] [ERROR] error_logs - ERROR
+[2021-08-10T16:09:13.739] [ERROR] error_logs - ERROR
+[2021-08-10T16:12:16.593] [ERROR] error_logs - ERROR
+[2021-08-10T16:13:13.068] [ERROR] error_logs - ERROR
+[2021-08-10T16:13:40.092] [ERROR] error_logs - ERROR
+[2021-08-10T16:14:03.607] [ERROR] error_logs - ERROR
+[2021-08-10T16:14:28.553] [ERROR] error_logs - ERROR
+[2021-08-10T16:14:50.043] [ERROR] error_logs - ERROR
+[2021-08-10T16:16:14.666] [ERROR] error_logs - ERROR
+[2021-08-10T16:16:21.951] [ERROR] error_logs - ERROR
+[2021-08-10T16:18:04.917] [ERROR] error_logs - ERROR
+[2021-08-10T16:18:09.043] [ERROR] error_logs - ERROR
+[2021-08-10T16:19:17.977] [ERROR] error_logs - ERROR
+[2021-08-10T16:20:19.457] [ERROR] error_logs - ERROR
+[2021-08-10T16:21:40.596] [ERROR] error_logs - ERROR
+[2021-08-10T16:21:52.268] [ERROR] error_logs - ERROR
+[2021-08-10T16:24:25.970] [ERROR] error_logs - ERROR
+[2021-08-10T16:25:03.031] [ERROR] error_logs - ERROR
+[2021-08-10T16:25:27.706] [ERROR] error_logs - ERROR
+[2021-08-10T16:26:03.584] [ERROR] error_logs - ERROR
+[2021-08-10T16:26:40.348] [ERROR] error_logs - ERROR
+[2021-08-10T16:38:04.783] [ERROR] error_logs - ERROR
+[2021-08-10T16:43:29.018] [ERROR] error_logs - ERROR
+[2021-08-10T16:44:21.593] [ERROR] error_logs - ERROR
+[2021-08-10T16:45:28.241] [ERROR] error_logs - ERROR
+[2021-08-10T16:45:39.492] [ERROR] error_logs - ERROR
+[2021-08-10T16:46:42.941] [ERROR] error_logs - ERROR
+[2021-08-10T16:47:22.911] [ERROR] error_logs - ERROR
+[2021-08-10T16:53:10.294] [ERROR] error_logs - ERROR
+[2021-08-10T16:57:00.260] [ERROR] error_logs - ERROR
+[2021-08-10T16:57:06.168] [ERROR] error_logs - ERROR
+[2021-08-10T16:57:40.049] [ERROR] error_logs - ERROR
+[2021-08-10T17:00:42.167] [ERROR] error_logs - ERROR
+[2021-08-10T17:04:37.952] [ERROR] error_logs - ERROR
+[2021-08-10T17:04:42.842] [ERROR] error_logs - ERROR
+[2021-08-10T17:05:10.114] [ERROR] error_logs - ERROR
+[2021-08-10T17:07:12.412] [ERROR] error_logs - ERROR
+[2021-08-10T17:07:35.179] [ERROR] error_logs - ERROR
+[2021-08-10T18:50:05.056] [ERROR] error_logs - ERROR
+[2021-08-10T18:50:09.718] [ERROR] error_logs - ERROR

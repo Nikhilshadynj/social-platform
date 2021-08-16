@@ -21,6 +21,11 @@ const schema = new mongoose.Schema({
         type : String,
         default : ''
     },
+    type : {
+        type : String,
+        default : 'post',
+        lowercase : true
+    }
 },{timestamps : true})
 
 schema.plugin(aggregatePaginate);

@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken');
-
+require('dotenv').config()
 module.exports = (req, res, next) => {
     var token = req.headers['x-access-token']
     if (!token) {
@@ -7,7 +7,7 @@ module.exports = (req, res, next) => {
             message: 'No token provided', code: 401, data: {}
         })
     }
-    jwt.verify(token, 'secretkey', function (err, decoded) {
+    jwt.verify(token, process.env.JWT_SECRET, function (err, decoded) {
         if (err) {
             return res.status(403).json({
                 status: 403,

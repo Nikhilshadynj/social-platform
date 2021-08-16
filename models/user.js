@@ -16,7 +16,8 @@ const User = new Schema({
         ref: 'Role',
         type: String,
         default: 'user',
-        enum: ["user", "celebrity", "admin"]
+        enum: ["user", "celebrity", "admin","vip","guest"],
+        lowercase : true
     },
     isVerified : {
         type : Boolean,
@@ -49,6 +50,18 @@ const User = new Schema({
         type : String,
         default : null
     },
+    interesedIn : {
+        type : String,
+        enum : ['men','women','others',null],
+        default : null,
+        lowercase : true
+    },
+    relationshipStatus : {
+        type : String,
+        enum : ['single','taken',null],
+        default : null,
+        lowercase : true
+    },
     age : {
         type : String,
         default : null
@@ -64,6 +77,14 @@ const User = new Schema({
     followings : {
         type : Number,
         default : 0
+    },
+    language : {
+        type : String,
+        default : null
+    },
+    profileName : {
+        type : String,
+        default : null
     }
 }, { timestamps: true });
 

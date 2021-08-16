@@ -6,7 +6,7 @@ tags:
   - name: A2Z
     description: Operations related to A2Z
 paths:  
-  /login:    
+  /api/login:    
     post:
       tags:
         - Users

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(() => {
+
+            alert('asdf');
+            $.ajax({
+                type: "GET",
+                url: "/aws",
+                contentType: "application/json",
+                beforeSend: function (xhr, settings) {
+
+                    xhr.setRequestHeader("range", "bytes 0");
+                },
+                success: function (data) {
+                    console.log('data----: ', data.readFile());
+                    // $('#showPage').attr('src', data);
+                    // $("#showPage").attr('src',"data:text/html;charset=utf-8," + escape(data))
+
+
+                    var arrrayBuffer = URL.createObjectURL(data); //data is the base64 encoded string
+                    var blob = new Blob([arrrayBuffer], { type: "application/pdf" });
+                    var link = window.URL.createObjectURL(blob);
+                    window.open(link, '', 'height=650,width=840');
+
+                }
+            });
+
+            function base64ToArrayBuffer(base64) {
+                var binaryString = window.atob(base64);
+                var binaryLen = binaryString.length;
+                var bytes = new Uint8Array(binaryLen);
+                for (var i = 0; i < binaryLen; i++) {
+                    var ascii = binaryString.charCodeAt(i);
+                    bytes[i] = ascii;
+                }
+                return bytes;
+            }
+
+        })
+
+        /* var arrrayBuffer = base64ToArrayBuffer(data); //data is the base64 encoded string
+        var blob = new Blob([arrrayBuffer], {type: "application/pdf"});
+        var link = window.URL.createObjectURL(blob);
+        window.open(link,'', 'height=650,width=840'); */
+
+    </script>
+</head>
+
+<body>
+    <iframe id="showPage" src="" />
+</body>
+
+</html>

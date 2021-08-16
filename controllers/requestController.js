@@ -8,7 +8,7 @@ const acceptRequest = async (req, res) => {
         const data = await Request.findOne({ $and: [{ requestedId: requestedId }, { requestingId: requestingId },{status : false}] })
         if (!data) {
             return res.status(404).json({
-                message: 'No Data Found Or Already Accepted', status: 404, data: {}
+                message: DM.NO_RECORD_FOUND, status: 404, data: {}
             })
         }
         data.status = true
@@ -21,7 +21,7 @@ const acceptRequest = async (req, res) => {
         await User.findByIdAndUpdate(requestingId, { $inc: { followings: 1 } })
         await User.findByIdAndUpdate(requestedId, { $inc: { followers: 1 } })
         return res.status(200).json({
-            message: 'Success', code: 200, data: {}
+            message: DM.SUCCESS, status: 200, data: {}
         })
     } catch (e) {
         return res.status(400).json({
@@ -36,11 +36,11 @@ const declineRequest = async (req,res)=> {
         const data = await Request.findOneAndDelete({ $and: [{ requestedId: requestedId }, { requestingId: requestingId }] })
         if (!data) {
             return res.status(404).json({
-                message: 'No Data Found', status: 404, data: {}
+                message: DM.NO_RECORD_FOUND, status: 404, data: {}
             })
         }
         return res.status(200).json({
-            message: 'Success', code: 200, data: {}
+            message: DM.SUCCESS, status: 200, data: {}
         })
     } catch (e) {
         return res.status(400).json({

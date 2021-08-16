@@ -17,23 +17,19 @@ const UserMetaData = require('../../models/user-metaData')
 const Request = require('../../models/requests')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
-require('dotenv')
+require('dotenv').config()
+
 /**
- * @api {get} /user GetCurrentUser
- * @apiGroup User
+ * @api {post} /login LoginAPI
+ * @apiGroup Login
  * @apiHeader {String} x-access-token A valid JSON Web Token
  * @apiSuccess {Object} user The currently logged in user
  */
- const jwtExpirySeconds = 86400; // expires in 24 hours
- const algor = 'HS256';
- const login = (req, res) => {
-    User.findOne({ $and : [{email: req.body.email},{role : 'admin'}]}, (err, user) => {
+ const login = async (req, res) => {
+    User.findOne({ $and : [{email: req.body.email}, {role : 'admin'}]}, async (err, user) => {
         if (user) {
             if (bcrypt.compareSync(req.body.password, user.password)) {
-                const token = jwt.sign({ userId: user._id }, 'secretKey', {
-                    algorithm: algor,
-                    expiresIn: jwtExpirySeconds,
-                });
+                const token = await jwt.sign({userId : user._id},process.env.JWT_SECRET)
                 res.json({
                     status: 200,
                     message: 'The user has been successfully logged in!',
@@ -54,7 +50,7 @@ require('dotenv')
                         email : user.email !== null ? user.email : '',
                         token : token
                     }
-                }); 
+                });
             } else {
                 res.status(400).json({
                     status: 400,
@@ -97,8 +93,6 @@ const getAllUsers = (req, res) => {
         }
     });
 };
-
-
 
 module.exports = {
     getAllUsers,

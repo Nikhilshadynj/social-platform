@@ -1,0 +1,107 @@
+[2021-08-11T11:30:21.351] [ERROR] error_logs - ERROR
+[2021-08-11T11:34:54.676] [ERROR] error_logs - ERROR
+[2021-08-11T11:35:40.543] [ERROR] error_logs - ERROR
+[2021-08-11T11:47:54.833] [ERROR] error_logs - ERROR
+[2021-08-11T11:48:00.094] [ERROR] error_logs - ERROR
+[2021-08-11T11:49:12.803] [ERROR] error_logs - ERROR
+[2021-08-11T11:49:22.341] [ERROR] error_logs - ERROR
+[2021-08-11T11:50:07.495] [ERROR] error_logs - ERROR
+[2021-08-11T11:50:57.610] [ERROR] error_logs - ERROR
+[2021-08-11T11:51:08.054] [ERROR] error_logs - ERROR
+[2021-08-11T11:51:24.424] [ERROR] error_logs - ERROR
+[2021-08-11T11:53:36.409] [ERROR] error_logs - ERROR
+[2021-08-11T11:53:39.296] [ERROR] error_logs - userController.js-homepageStory-MongoError: $concat only supports strings, not array
+[2021-08-11T11:55:02.205] [ERROR] error_logs - ERROR
+[2021-08-11T12:01:42.717] [ERROR] error_logs - ERROR
+[2021-08-11T12:01:44.639] [ERROR] error_logs - userController.js-homepageStory-MongoError: $mergeObjects requires object inputs, but input [{name: "http://localhost:4050/post/60e41dd0a3ccd42766e21c62/_dj7yzn857.jpg"}] is of type array
+[2021-08-11T12:02:49.759] [ERROR] error_logs - ERROR
+[2021-08-11T12:02:59.223] [ERROR] error_logs - ERROR
+[2021-08-11T12:08:07.453] [ERROR] error_logs - ERROR
+[2021-08-11T12:08:11.029] [ERROR] error_logs - ERROR
+[2021-08-11T12:08:13.342] [ERROR] error_logs - userController.js-homepageStory-MongoError: Unrecognized expression '$addFields'
+[2021-08-11T12:08:54.240] [ERROR] error_logs - ERROR
+[2021-08-11T12:08:58.570] [ERROR] error_logs - userController.js-homepageStory-MongoError: Unrecognized expression '$addFields'
+[2021-08-11T12:09:04.568] [ERROR] error_logs - ERROR
+[2021-08-11T12:12:31.241] [ERROR] error_logs - ERROR
+[2021-08-11T12:12:36.862] [ERROR] error_logs - userController.js-homepageStory-MongoError: $arrayToObject requires an object keys of 'k' and 'v'. Found incorrect number of keys:1
+[2021-08-11T12:12:55.335] [ERROR] error_logs - ERROR
+[2021-08-11T12:15:09.121] [ERROR] error_logs - ERROR
+[2021-08-11T12:15:14.575] [ERROR] error_logs - ERROR
+[2021-08-11T12:15:31.871] [ERROR] error_logs - ERROR
+[2021-08-11T12:16:22.590] [ERROR] error_logs - ERROR
+[2021-08-11T12:16:23.906] [ERROR] error_logs - userController.js-homepageStory-ReferenceError: $time is not defined
+[2021-08-11T12:16:36.518] [ERROR] error_logs - ERROR
+[2021-08-11T12:16:37.470] [ERROR] error_logs - userController.js-homepageStory-ReferenceError: $createdAt is not defined
+[2021-08-11T12:16:44.577] [ERROR] error_logs - ERROR
+[2021-08-11T12:55:22.130] [ERROR] error_logs - ERROR
+[2021-08-11T12:55:25.579] [ERROR] error_logs - userController.js-homepageStory-MongoError: Invalid $project :: caused by :: Unknown expression $unwind
+[2021-08-11T12:55:55.444] [ERROR] error_logs - ERROR
+[2021-08-11T12:56:15.070] [ERROR] error_logs - ERROR
+[2021-08-11T12:56:25.581] [ERROR] error_logs - ERROR
+[2021-08-11T12:57:46.116] [ERROR] error_logs - ERROR
+[2021-08-11T12:57:51.413] [ERROR] error_logs - ERROR
+[2021-08-11T12:57:53.190] [ERROR] error_logs - userController.js-homepageStory-MongoError: FieldPath field names may not start with '$'.
+[2021-08-11T12:58:05.753] [ERROR] error_logs - ERROR
+[2021-08-11T12:58:22.592] [ERROR] error_logs - ERROR
+[2021-08-11T13:05:43.894] [ERROR] error_logs - ERROR
+[2021-08-11T13:06:12.160] [ERROR] error_logs - ERROR
+[2021-08-11T13:06:47.652] [ERROR] error_logs - ERROR
+[2021-08-11T13:10:03.301] [ERROR] error_logs - ERROR
+[2021-08-11T13:10:30.647] [ERROR] error_logs - ERROR
+[2021-08-11T13:10:46.174] [ERROR] error_logs - ERROR
+[2021-08-11T13:12:06.406] [ERROR] error_logs - ERROR
+[2021-08-11T13:12:08.312] [ERROR] error_logs - userController.js-homepageStory-MongoError: The field 'file' must specify one accumulator
+[2021-08-11T13:12:17.535] [ERROR] error_logs - ERROR
+[2021-08-11T13:13:14.584] [ERROR] error_logs - ERROR
+[2021-08-11T13:19:28.678] [ERROR] error_logs - ERROR
+[2021-08-11T13:20:20.243] [ERROR] error_logs - ERROR
+[2021-08-11T13:20:23.416] [ERROR] error_logs - userController.js-homepageStory-MongoError: Unrecognized parameter to $map: $concatArrays
+[2021-08-11T13:20:38.488] [ERROR] error_logs - ERROR
+[2021-08-11T13:22:20.708] [ERROR] error_logs - ERROR
+[2021-08-11T13:23:12.933] [ERROR] error_logs - ERROR
+[2021-08-11T13:23:25.140] [ERROR] error_logs - ERROR
+[2021-08-11T13:23:34.304] [ERROR] error_logs - ERROR
+[2021-08-11T13:24:56.741] [ERROR] error_logs - ERROR
+[2021-08-11T13:28:04.623] [ERROR] error_logs - ERROR
+[2021-08-11T13:28:06.773] [ERROR] error_logs - userController.js-homepageStory-MongoError: Invalid $project :: caused by :: Unrecognized expression '$expressionNary'
+[2021-08-11T13:28:24.351] [ERROR] error_logs - ERROR
+[2021-08-11T13:28:29.843] [ERROR] error_logs - ERROR
+[2021-08-11T13:30:00.059] [ERROR] error_logs - ERROR
+[2021-08-11T13:30:02.390] [ERROR] error_logs - userController.js-homepageStory-MongoError: The $concat accumulator is a unary operator
+[2021-08-11T13:30:51.581] [ERROR] error_logs - ERROR
+[2021-08-11T13:32:57.671] [ERROR] error_logs - ERROR
+[2021-08-11T13:34:59.547] [ERROR] error_logs - ERROR
+[2021-08-11T13:35:11.984] [ERROR] error_logs - ERROR
+[2021-08-11T13:36:37.136] [ERROR] error_logs - ERROR
+[2021-08-11T13:37:38.945] [ERROR] error_logs - ERROR
+[2021-08-11T13:39:43.826] [ERROR] error_logs - ERROR
+[2021-08-11T13:40:03.319] [ERROR] error_logs - ERROR
+[2021-08-11T13:40:41.587] [ERROR] error_logs - ERROR
+[2021-08-11T13:41:26.998] [ERROR] error_logs - ERROR
+[2021-08-11T13:42:36.052] [ERROR] error_logs - ERROR
+[2021-08-11T13:42:41.243] [ERROR] error_logs - ERROR
+[2021-08-11T13:43:06.133] [ERROR] error_logs - ERROR
+[2021-08-11T13:43:22.250] [ERROR] error_logs - ERROR
+[2021-08-11T13:43:52.582] [ERROR] error_logs - ERROR
+[2021-08-11T13:43:54.235] [ERROR] error_logs - userController.js-homepageStory-MongoError: cant $subtract a array from a Date
+[2021-08-11T13:44:11.537] [ERROR] error_logs - ERROR
+[2021-08-11T13:44:50.427] [ERROR] error_logs - ERROR
+[2021-08-11T13:45:15.017] [ERROR] error_logs - ERROR
+[2021-08-11T13:46:18.783] [ERROR] error_logs - ERROR
+[2021-08-11T13:46:20.058] [ERROR] error_logs - userController.js-homepageStory-MongoError: Invalid $project :: caused by :: Use of undefined variable: createdAt
+[2021-08-11T13:46:27.324] [ERROR] error_logs - ERROR
+[2021-08-11T13:47:09.822] [ERROR] error_logs - ERROR
+[2021-08-11T13:47:23.369] [ERROR] error_logs - ERROR
+[2021-08-11T13:54:21.212] [ERROR] error_logs - ERROR
+[2021-08-11T15:13:54.996] [ERROR] error_logs - ERROR
+[2021-08-11T15:13:59.546] [ERROR] error_logs - userController.js-homepageStory-MongoError: Invalid $project :: caused by :: Use of undefined variable: createdAt
+[2021-08-11T15:16:00.735] [ERROR] error_logs - ERROR
+[2021-08-11T15:16:41.844] [ERROR] error_logs - ERROR
+[2021-08-11T15:16:44.744] [ERROR] error_logs - userController.js-homepageStory-MongoError: The field 'createdAt' must be an accumulator object
+[2021-08-11T15:16:57.572] [ERROR] error_logs - ERROR
+[2021-08-11T15:17:02.615] [ERROR] error_logs - ERROR
+[2021-08-11T15:17:05.004] [ERROR] error_logs - userController.js-homepageStory-MongoError: The field 'created' must be an accumulator object
+[2021-08-11T15:19:42.178] [ERROR] error_logs - userController.js-homepageStory-MongoError: The field 'created' must be an accumulator object
+[2021-08-11T15:19:46.282] [ERROR] error_logs - ERROR
+[2021-08-11T15:23:53.013] [ERROR] error_logs - ERROR
+[2021-08-11T19:11:17.957] [ERROR] error_logs - ERROR

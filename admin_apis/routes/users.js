@@ -5,7 +5,7 @@ const express = require('express')
 
 const router = new express.Router()
 
-router.get('/web_api/get-all-user',isAuthenticated, (req, res) => {
+router.get('/web_api/get-all-user', isAuthenticated, (req, res) => {
     userController.getAllUsers(req, res);
 });
 

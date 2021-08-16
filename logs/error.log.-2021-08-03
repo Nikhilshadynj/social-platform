@@ -1,0 +1,57 @@
+[2021-08-03T11:44:18.568] [ERROR] error_logs - ERROR
+[2021-08-03T11:48:51.542] [ERROR] error_logs - ERROR
+[2021-08-03T11:49:05.491] [ERROR] error_logs - ERROR
+[2021-08-03T11:50:14.302] [ERROR] error_logs - ERROR
+[2021-08-03T11:50:22.421] [ERROR] error_logs - ERROR
+[2021-08-03T11:50:30.335] [ERROR] error_logs - ERROR
+[2021-08-03T11:50:42.307] [ERROR] error_logs - ERROR
+[2021-08-03T11:51:37.705] [ERROR] error_logs - ERROR
+[2021-08-03T11:52:15.662] [ERROR] error_logs - ERROR
+[2021-08-03T11:58:04.839] [ERROR] error_logs - ERROR
+[2021-08-03T11:58:34.957] [ERROR] error_logs - ERROR
+[2021-08-03T11:58:39.417] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$exists'
+[2021-08-03T11:59:05.599] [ERROR] error_logs - ERROR
+[2021-08-03T11:59:10.373] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$exists'
+[2021-08-03T12:00:48.836] [ERROR] error_logs - ERROR
+[2021-08-03T12:00:50.409] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$exists'
+[2021-08-03T13:15:44.728] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$exists'
+[2021-08-03T13:16:07.969] [ERROR] error_logs - ERROR
+[2021-08-03T13:16:10.814] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$exists'
+[2021-08-03T13:17:20.087] [ERROR] error_logs - ERROR
+[2021-08-03T13:17:23.550] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$user.profileName'
+[2021-08-03T13:17:25.571] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: Unrecognized expression '$user.profileName'
+[2021-08-03T13:17:37.148] [ERROR] error_logs - ERROR
+[2021-08-03T13:17:39.362] [ERROR] error_logs - userController.js-getLikes-MongoError: Invalid $project :: caused by :: FieldPath field names may not contain '.'.
+[2021-08-03T13:17:58.178] [ERROR] error_logs - ERROR
+[2021-08-03T15:16:30.632] [ERROR] error_logs - ERROR
+[2021-08-03T15:17:09.855] [ERROR] error_logs - ERROR
+[2021-08-03T15:28:17.454] [ERROR] error_logs - ERROR
+[2021-08-03T15:29:49.089] [ERROR] error_logs - ERROR
+[2021-08-03T15:30:23.276] [ERROR] error_logs - ERROR
+[2021-08-03T15:31:16.505] [ERROR] error_logs - ERROR
+[2021-08-03T15:38:08.498] [ERROR] error_logs - ERROR
+[2021-08-03T15:38:28.024] [ERROR] error_logs - ERROR
+[2021-08-03T15:41:49.860] [ERROR] error_logs - ERROR
+[2021-08-03T15:43:55.897] [ERROR] error_logs - ERROR
+[2021-08-03T15:46:04.663] [ERROR] error_logs - ERROR
+[2021-08-03T15:46:27.248] [ERROR] error_logs - ERROR
+[2021-08-03T15:46:34.887] [ERROR] error_logs - ERROR
+[2021-08-03T15:47:37.332] [ERROR] error_logs - ERROR
+[2021-08-03T15:47:54.683] [ERROR] error_logs - ERROR
+[2021-08-03T15:47:58.836] [ERROR] error_logs - ERROR
+[2021-08-03T15:49:19.918] [ERROR] error_logs - ERROR
+[2021-08-03T15:49:49.398] [ERROR] error_logs - ERROR
+[2021-08-03T15:53:45.772] [ERROR] error_logs - ERROR
+[2021-08-03T16:02:17.414] [ERROR] error_logs - ERROR
+[2021-08-03T16:03:06.709] [ERROR] error_logs - ERROR
+[2021-08-03T16:04:35.760] [ERROR] error_logs - ERROR
+[2021-08-03T16:05:08.436] [ERROR] error_logs - ERROR
+[2021-08-03T16:05:33.227] [ERROR] error_logs - ERROR
+[2021-08-03T16:05:38.542] [ERROR] error_logs - ERROR
+[2021-08-03T16:05:47.051] [ERROR] error_logs - ERROR
+[2021-08-03T16:11:20.131] [ERROR] error_logs - ERROR
+[2021-08-03T17:26:44.023] [ERROR] error_logs - ERROR
+[2021-08-03T18:04:56.311] [ERROR] error_logs - ERROR
+[2021-08-03T18:05:06.796] [ERROR] error_logs - ERROR
+[2021-08-03T18:05:18.844] [ERROR] error_logs - ERROR
+[2021-08-03T19:07:21.711] [ERROR] error_logs - ERROR
