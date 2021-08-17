@@ -3,8 +3,8 @@ const User = require('../models/user');
 require('dotenv').config()
 var request = require('request').defaults({ encoding: null });
 AWS.config.update({
-	"accessKeyId": 'AKIAZBGUD2NXIUMR2V77',
-	"secretAccessKey": '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',
+	"accessKeyId": '',
+	"secretAccessKey": '',
 	"region": process.env.REGION
 })
 const client = new AWS.Rekognition();
